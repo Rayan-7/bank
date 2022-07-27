@@ -15,7 +15,7 @@ app.use('/', api)
 
 
 
-const port = 4000
+const port = 8080
 app.listen(process.env.port ||port, function () {
     console.log(`Server running on ${port}`)
 })

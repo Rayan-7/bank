@@ -22,7 +22,7 @@ class App extends Component {
       }
 }
 async getTransaction() {
-  return axios.get("http://localhost:4000/transactions")
+  return axios.get("http://localhost:8080/transactions")
 }
 async componentDidMount() {
   const transaction = await this.getTransaction()
@@ -43,18 +43,18 @@ handleInput=(e)=>{
 
 inputsPositiveButton=()=>{
   let transaction=this.state.inputs
-  axios.post("http://localhost:4000/transactions",transaction)
+  axios.post("http://localhost:8080/transactions",transaction)
 }
 
 inputsNegButton=()=>{
   let tempInputs = {...this.state.inputs}
   tempInputs.amountInput="-"+tempInputs.amountInput
     let transaction=tempInputs
-    axios.post("http://localhost:4000/transactions",transaction)
+    axios.post("http://localhost:8080/transactions",transaction)
 }
 
 deleteTransaction=async (id)=>{
-  let transaction1=await axios.delete(`http://localhost:4000/transaction/${id}`)
+  let transaction1=await axios.delete(`http://localhost:8080/transaction/${id}`)
 
   this.setState({transaction:transaction1.data})
 }

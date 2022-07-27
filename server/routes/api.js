@@ -30,10 +30,12 @@ router.post('/transactionsJson', function (request, response) {
 router.post('/transactions', function (request, response) {
     let transaction=request.body
     let transactionObj={};
+    console.log(transaction)
     transactionObj=new Transaction({
         amount: transaction.amountInput,
         vendor: transaction.categoryInput,
-       category : transaction.vendorInput
+       category : transaction.vendorInput,
+       currency:transaction.currencyInput
     })
     transactionObj.save()
     response.end()

@@ -17,6 +17,7 @@ class Operations extends Component {
         return (
             <div>
                 <input type="number" className="amountInput" placeholder="enter your amount" onChange={this.handleInputChange}/>
+                <input type="text" className="currencyInput" placeholder="enter your currency" onChange={this.handleInputChange}/>
                 <input type="text" className="categoryInput" placeholder="enter your category" onChange={this.handleInputChange}/>
                 <input type="text" className="vendorInput" placeholder="enter your vendor" onChange={this.handleInputChange}/>
                 <a href="#" className="myButton" onClick={this.inputsPositiveButton}>Positive</a>

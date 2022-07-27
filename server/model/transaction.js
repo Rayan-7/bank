@@ -7,7 +7,8 @@ mongoose.connect(process.env.MONGODB_URL||'mongodb://localhost/bankDb', { useNew
 const transactionSchema = new Schema({
     amount : Number,
     category : String,
-    vendor : String
+    vendor : String,
+    Currency:String
 })
 
 const Transaction = mongoose.model('transaction', transactionSchema)

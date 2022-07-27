@@ -9,10 +9,10 @@ class Transaction extends Component {
         let transaction=this.props.transaction
         return (
              <div id="transactionDesign">
-                 <div>amount: {transaction.amount}</div>
-                 <div>category: {transaction.category}</div>
-                 <div>vendor: {transaction.vendor}</div>
-                 <img onClick={this.deleteTransaction} id="imgId" src='https://cdn-icons.flaticon.com/png/512/1627/premium/1627130.png?token=exp=1641397899~hmac=e76c3a054306b2610395fd4bc062e48a'></img>
+                 <div><h3>amount: {transaction.amount} {transaction.Currency}</h3></div>
+                 <div><h3>category: {transaction.category}</h3></div>
+                 <div><h3>vendor: {transaction.vendor}</h3></div>
+                 <img onClick={this.deleteTransaction} id="imgId" src='https://img.icons8.com/material-outlined/344/trash--v1.png'></img>
              </div>
             
         );

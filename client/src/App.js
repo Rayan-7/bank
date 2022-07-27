@@ -15,6 +15,7 @@ class App extends Component {
         transaction:[],
         inputs:{
         amountInput:"",
+        currencyInput:"",
         categoryInput:"",
         vendorInput:""
         }
@@ -24,6 +25,10 @@ async getTransaction() {
   return axios.get("http://localhost:4000/transactions")
 }
 async componentDidMount() {
+  const transaction = await this.getTransaction()
+  this.setState({ transaction:transaction.data })
+}
+async componentDidUpdate(){
   const transaction = await this.getTransaction()
   this.setState({ transaction:transaction.data })
 }
@@ -57,11 +62,15 @@ deleteTransaction=async (id)=>{
 render() {
   
   return (
+    <div>
     <Router>
+      <div>
       <div id="main-links">
-      <Link to="/Operations">Operations</Link>
-      <Link to="/Transactions">Transactions</Link>
-      <Route path="/Operations" exact render={() => <Operations
+      <img id="img" src='https://cdn-icons-png.flaticon.com/512/2830/2830284.png'></img>
+      <Link id="operationsLink" to="/">Operations</Link>
+      <Link id="TransactionsLink" to="/Transactions">Transactions</Link>
+      </div>
+      <Route path="/" exact render={() => <Operations
       key={this.state.transaction}
       handleInput={this.handleInput}
       inputsPositiveButton={this.inputsPositiveButton}
@@ -74,6 +83,7 @@ render() {
       deleteTransaction={this.deleteTransaction}/>}/>
       </div>
     </Router>
+    </div>
 
   );
 }

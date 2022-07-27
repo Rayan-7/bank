@@ -1,0 +1,4 @@
+app.get("/transactions", async function (request, response) {
+    let transaction=await Transaction.find({}).exec()
+    response.send(transaction)
+})

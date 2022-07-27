@@ -5,7 +5,6 @@ import '../styles/Transactions.css'
 class Transactions extends Component {
     render() {
         let transactions=this.props.transactions
-        console.log(transactions)
         return (
             <div id="transaction-container">
              {transactions.map(transaction=>{
